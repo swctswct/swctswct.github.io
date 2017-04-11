@@ -1,0 +1,80 @@
+
+
+
+#Nav a{
+     color: #f2f2f2;
+     align-self: center;
+     font-family: Calibri;
+     font-weight: bold;
+     font-size: 20px;
+}
+body{
+  background: url(picsu3.JPG) no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+
+
+
+}
+#name h1{
+  font-weight: bolder;
+  font-size:60px ;
+
+  color: #A22B03;
+  font-family: Tahoma;
+}
+@media (min-width: 768px) {
+  .navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+}
+/***********************************************************************
+*  OPAQUE NAVBAR SECTION
+***********************************************************************/
+.opaque-navbar {
+    background-color: rgba(0,0,0,0.5);
+  /* Transparent = rgba(0,0,0,0) / Translucent = (0,0,0,0.5)  */
+    height: 60px;
+    border-bottom: 0px;
+    transition: background-color .5s ease 0s;
+}
+
+.opaque-navbar.opaque {
+    background-color: black;
+    height: 60px;
+    transition: background-color .5s ease 0s;
+}
+
+
+
+
+
+  .opaque-navbar {
+    background-color: black;
+    height: 60px;
+    transition: background-color .5s ease 0s;
+}
+
+}
+.navbar-inverse{
+  background-color: black;
+}
+
+.navbar-light{
+  background: #333333;
+  font-color: #FFFFFF;
+}
+
+.navbar-nav {
+  align-items: center;
+  color: #FFFFFF;
+}
+.navbar-collapse{
+  color: #FFFFFF;
+}
+
+.fontka{
+  color: #FFFFFF;
+}

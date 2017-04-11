@@ -1,0 +1,295 @@
+<html>
+<style>
+input[type=text], select {
+    width: 80%;
+    padding: 9px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=tel], select {
+    width: 80%;
+    padding: 9px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=button] {
+    width: 24%;
+    background-color: #06C;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 20;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+	alignment-adjust:central;
+
+}
+.my-border 
+{	
+text-align:center;
+color:#FFFFFF;
+border:2px solid #CCCCCC;
+border-radius:25px;
+width:50%;
+margin:auto;
+background-color:#CCC;
+}
+
+</style>
+<script>
+var validate = true;
+
+function validateForm() {
+	validate = true;
+   	var form = document.getElementById('formregis').elements;
+    for(var i = 0; i < form.length; i++){
+    	if (form[i].value == "") {
+        	alert(form[i].name+" filled out");
+        	validate = false;
+		}
+    }
+	
+}
+
+function validateNumeric() {
+	var numbers = /^[0-9]+$/;
+	var form = document.getElementById('formregis').elements;
+	for(var i = 0; i < form.length; i++){
+    	if(form[i].type == "tel"){	
+			 if(!form[i].value.match(numbers))
+			 {
+        		alert("Please enter "+form[i].name+" with numeric characters." +"\n" +
+				"(Allowed input:0-9)");
+				validate = false;
+    		}
+			if(form[i].name == "Zipcode" ){
+				if(form[i].value.length!=5){
+					alert("Please enter "+form[i].name+" with 5 characters.")
+					validate = false;
+				}
+			}
+			if(form[i].name == "Phone number" ){
+				if(form[i].value.length!=9){
+					alert("Please enter "+form[i].name+" with 9 characters.")
+					validate = false;
+				}
+			}
+			if(form[i].name == "cell phone number" ){
+				if(form[i].value.length!=10){
+					alert("Please enter "+form[i].name+" with 10 characters.")
+					validate = false;
+				}	
+					
+			}				
+			if(form[i].name == "citizenship number" ){
+				if(form[i].value.length!=13){
+					alert("Please enter "+form[i].name+" with 13 characters.")
+					validate = false;
+				}
+			}
+		}
+	 }
+
+}
+
+window.onload = function(){
+	loadCookies();
+}
+
+function allLetter(){
+   	var letters = /^[A-Za-z]+$/;
+   	var form = document.getElementById('formregis').elements;
+	for(var i = 0; i < form.length; i++){
+		if(form[i].type == "text"){
+			if(!form[i].value.match(letters)){
+     			alert("Please enter "+form[i].name+ " with characters ");
+				validate = false;
+    		 }
+		}
+  }
+  
+}
+
+var myCookies = {};
+function saveCookies(){
+	myCookies["_fname"] =document.getElementById("fname").value;
+	myCookies["_lname"] = document.getElementById("lname").value; 
+	myCookies["_hnum"] =document.getElementById("hnum").value;
+	myCookies["_street"] = document.getElementById("street").value; 
+	myCookies["_city"] = document.getElementById("city").value; 
+	myCookies["_province"] =document.getElementById("province").value;
+	myCookies["_zipcode"] = document.getElementById("zip").value; 
+	myCookies["_phonenum"] = document.getElementById("pnum").value; 
+	myCookies["_cellpnum"] =document.getElementById("cpnum").value;
+	myCookies["_csnum"] = document.getElementById("csnum").value; 
+	myCookies["_zosign"] =document.getElementById("zsign").value;
+	myCookies["_zoyear"] = document.getElementById("zyear").value;
+	myCookies["_birthday"] =document.getElementById("bd").value;
+	myCookies["_bdofweek"] = document.getElementById("bdweek").value;  
+	document.cookie = "";
+	var expiresAttrib = new Date(Date.now()+60*1000).toString();
+	var cookieString = "";
+	for (var key in myCookies){
+		cookieString = key+"="+myCookies[key]+";"+expiresAttrib+";";
+		document.cookie = cookieString;
+	}
+	alert("Save");
+	//document.getElementById("out").innerHTML = document.cookie;
+}
+
+function loadCookies(){
+	myCookies = {};
+	var kv = document.cookie.split(";");
+	for(var id in kv){
+		var cookie = kv[id].split("=");
+		myCookies[cookie[0].trim()] = cookie[1];
+
+		
+	}
+
+
+	document.getElementById("fname").value = myCookies["_fname"];
+	document.getElementById("lname").value = myCookies["_lname"]; 
+	document.getElementById("hnum").value=myCookies["_hnum"];
+	document.getElementById("street").value = myCookies["_street"] ;
+	document.getElementById("city").value = myCookies["_city"]; 
+	document.getElementById("province").value = myCookies["_province"]; 
+	document.getElementById("zip").value = myCookies["_zipcode"];
+	document.getElementById("pnum").value = myCookies["_phonenum"]; 
+	document.getElementById("cpnum").value = myCookies["_cellpnum"];
+	document.getElementById("csnum").value = myCookies["_csnum"]; 
+	document.getElementById("zsign").value = myCookies["_zosign"];
+	document.getElementById("zyear").value = myCookies["_zoyear"];
+	document.getElementById("bd").value =myCookies["_birthday"];
+	document.getElementById("bdweek").value = myCookies["_bdofweek"]; 
+	//window.location.href="Untitled-2.html";
+	}
+	
+
+	
+function clearFields() {
+    document.getElementById("formregis").reset();
+}	
+function submitjj(){
+if(validate== true){
+	alert(document.cookie);
+	window.location.href="report.html";
+	
+	}
+	
+}
+</script>
+
+<body background="Noisy-Grid-Seamless-Pattern-For-Website-Background.jpg">
+<p><img src="Screenshot (2).png" width="1335" height="430"></p>
+<h1 style="font-family:Arial, Helvetica, sans-serif" ,"font-size:100%" ; >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Register Form</h1>
+<form id="formregis" name="formregis">
+<table width="711" border="0" align="center"  class="my-border" style="font-family:Arial, Helvetica, sans-serif">
+  <tr>
+  <td colspan="3"><table width="841" border="0">
+    <tr>
+      <td width="149"><b>Firstname :<b></td>
+      <td width="219"><input type="text" name="Firstname" id="fname"></td>
+      <td width="170"><b>Lastname :<b></td>
+      <td width="146"><input type="text" name="Lastname" id="lname"></td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Address<b></td>
+    </tr>
+    <tr>
+      <td> House number :</td>
+      <td><input type="tel" name="House number" id="hnum"></td>
+      <td> Street :</td>
+      <td><input type="text" name="Street" id = "street"></td>
+    </tr>
+    <tr>
+      <td> City : </td>
+      <td><input type="text" name="City" id="city"></td>
+      <td> Province :</td>
+      <td><input type="text" name="Province" id="province"></td>
+    </tr>
+    <tr>
+      <td> Zipcode : </td>
+      <td><input type="tel" name="Zipcode" id="zip" placeholder="xxxxx"></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><b>Phone number : <b></td>
+      <td><input type="tel" name="Phone number" id="pnum" placeholder="xx-xxx-xxxx"></td>
+      <td><b>Cell phone number :<b></td>
+      <td><input type="tel" name="cell phone number" id="cpnum" placeholder="+66-xxxx-xxxx"></td>
+    </tr>
+    <tr>
+      <td><b>Birthday :<b> </td>
+      <td>
+  <input type="date" name="bday" id ="bd">
+</td>
+      <td><b>Birth Day of Week :<b></td>
+      <td><select name="Birthday of week" id="bdweek">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td><b>Citizenship number :<b></td>
+      <td colspan="3"><input type="tel" name="citizenship number"  id="csnum" placeholder="x-xxxx-xxxxx-xx x"></td>
+      <td width="1">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><b>Zodiac Sign :<b> </td>
+      <td><select name="Zodiac Sign" id="zsign">
+        <option value="Aries">Aries</option>
+        <option value="Taurus">Taurus</option>
+        <option value="Gemini">Gemini</option>
+        <option value="Cancer">Cancer</option>
+        <option value="Leo">Leo</option>
+        <option value="Virgo">Virgo</option>
+        <option value="Libra">Libra</option>
+        <option value="Scorpio">Scorpio</option>
+        <option value="Sagit">Sagittarius</option>
+        <option value="Capric">Capricorn</option>
+        <option value="Aquarius">Aquarius</option>
+        <option value="Pisces">Pisces</option>
+      </select></td>
+      <td><b>Zodiac Year : <b></td>
+      <td>
+        <select name="Zodiac Year" id="zyear">
+          <option value="Rat">Rat</option>
+          <option value="Ox">Ox</option>
+          <option value="Tiger">Tiger</option>
+          <option value="Rab">Rabbit</option>
+          <option value="Dragon">Dragon</option>
+          <option value="Snake">Snake</option>
+          <option value="Horse">Horse</option>
+          <option value="Goat">Goat</option>
+          <option value="Monkey">Monkey</option>
+          <option value="Rooster">Rooster</option>
+          <option value="Dog">Dog</option>
+          <option value="Pig">Pig</option>
+        </select>
+      
+        </td>
+    </tr>
+  <tr>
+      <td colspan="4"> <input type="button" value="Submit" onClick=" validateForm() ; validateNumeric() ;allLetter() ;submitjj()" >
+        <input type="button" value="Save" onClick="saveCookies()">
+        <input type="button" value="Cancel" onClick="clearFields()">
+      <p id="out"></p></td>    
+    </tr>
+</form>
+
+<p>&nbsp;</p>
+</body>
+</html>
