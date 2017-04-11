@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Lab4</title>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+var validate =true;
+function clearFields() {
+    document.getElementById("myform").reset();
+}
+function validateForm() {
+
+   	var form = document.getElementById('myform').elements;
+    for(var i = 0; i < form.length; i++){
+    	if (form[i].value == "") {
+        	alert(form[i].name+" is filled out");
+        	validate = false;
+		}
+
+
+    }
+
+
+
+	var len = $('input:radio[name="group1"]:checked').size();
+
+    if(len == 0){
+        alert("Please choose your gender.")
+        validate = false;
+    }else{
+        validate = true;
+    }
+
+
+
+}
+
+$(document).ready(function() {
+
+
+	//alert("in");
+	$.get("lab4/allProvince.txt",function(data,status){
+
+	var res = data.split(".txt");
+ 	$.each(res, function(index, value) {
+    $('#province').append($("<option/>", {
+        value: value,
+        text: value
+    }));
+});
+	});
+
+});
+
+function loadXMLDoc() {
+	if(validate == true){
+		alert("Hello,"+fname.value)
+    	var e = document.getElementById("province");
+    	var str = e.options[e.selectedIndex].text;
+		var pprovince = "จังหวัด" +str;
+		var mt = "lab4/motto/"+str+".txt"
+		var ssign ="lab4/sign/"+str+".png";
+		$('#detailpro').show();
+  		var xhttp = new XMLHttpRequest();
+  		xhttp.onreadystatechange = function() {
+    	if (this.readyState == 4 && this.status == 200) {
+      		document.getElementById("motto").innerHTML = this.responseText ;
+			$("#sign").attr("src","lab4/sign/"+str+".png");
+
+
+
+    		}
+  		};
+		var mt = "lab4/motto/"+str+".txt"
+  		xhttp.open("GET",mt, true);
+ 		xhttp.send();
+		}
+	document.getElementById("proname").innerHTML = pprovince;
+}
+
+function subchangeBg(){
+	if(validate== true){
+		var Bdate = document.getElementById('bday').value;
+		var Bday = +new Date(Bdate);
+		var age =  ~~ ((Date.now() - Bday) / (31557600000));
+		//alert(age)
+		if (document.getElementById('radio-1').checked &&  age >= 13 ){
+			//alert("malemale")
+			$("html").css("background-image","url(1.jpg)");
+			$(".my-border").css("background-color","#CCC")
+			}
+		else if (document.getElementById('radio-2').checked && age >= 13){
+			//alert("fefe")
+			$("html").css("background-image","url(2.jpg)");
+			$(".my-border").css("background-color","#CCC")
+			}
+		else if (document.getElementById('radio-1').checked &&  age < 13 ){
+			//alert("boy")
+			$("html").css("background-image","url(mimi.jpg)");
+			$(".formja").css("font-family","'Comic Sans MS', cursive")
+			$(".button").css("font-family","'Comic Sans MS', cursive")
+
+			$(".my-border").css("background-color","#FC9")
+			}
+
+
+		else if (document.getElementById('radio-2').checked &&  age < 13 ){
+			//alert("girl")
+			$("html").css("background-image","url(boyboy1.jpg)");
+			$(".formja").css("font-family","'Comic Sans MS', cursive")
+			$(".button").css("font-family","'Comic Sans MS', cursive")
+			}
+	}
+}
+
+</script>
+
+
+
+</head>
+
+
+
+<body>
+<p id="content">  </p>
+
+<form class="formja" id="myform" name="myform" >
+<p>&nbsp;</p>
+<div class="divdiv">
+<table id="tbtb" width="474" border="0" class="my-border" >
+  <tr>
+    <td width="150"> <b> Firstname : </b></td>
+    <td width="289"><input type="text" name="fname" id="fname"></td>
+  </tr>
+  <tr>
+    <td><b> Lastname : </b></td>
+    <td><input type="text" name="lname" id="lname"></td>
+  </tr>
+  <tr>
+    <td><b> Birthday : </b></td>
+    <td><input type="date" name="bday" id="bday" ></td>
+  </tr>
+  <tr>
+    <td><b> Gender : </b></td>
+    <td>
+    <section id="first" class="section">
+     <div class="container">
+      <input type="radio" name="group1" id="radio-1" value="male">
+      <label for="radio-1"><span class="radio">Male</span></label>
+    </div>
+    <div class="container">
+      <input type="radio" name="group1" id="radio-2" value="female">
+      <label for="radio-2"><span class="radio"> Female</span></label>
+    </div>
+	</section>
+    </td>
+  </tr>
+  <tr>
+    <td><b> Province : </b></td>
+    <td><select name="province" id="province">
+        <option  value="" disabled selected value > -- select province -- </option>
+        </select>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><input class="button" type="button" value="Submit" onClick="validateForm(); subchangeBg() ; loadXMLDoc(); " >
+    <input class="button" type="button" value="Cancel" onClick="clearFields()" ></td>
+
+  </tr>
+
+</table>
+</div>
+</form>
+<p><br>
+</p>
+
+
+<form class="formjaja">
+
+<table id="detailpro" width="700" border="0" class="my-border"  style="display:none; " >
+  <tr >
+    <td colspan="2" ><p id="proname"></p></td>
+  </tr>
+  <tr>
+    <td i><img id="sign" width="200" height="200" ></img></td>
+  	<td id="motto"><p width=10% ></p></td>
+  </tr>
+
+
+</table>
+
+
+</form>
+
+
+
+
+</body>
+</html>

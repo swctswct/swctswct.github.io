@@ -1,0 +1,170 @@
+<!DOCTYPE html >
+<title>page2</title>
+<head>
+<style>
+h1{
+	font-family:Arial, Helvetica, sans-serif;
+	margin: 40px 0;
+	font-size:36px
+
+}
+input[type=button] {
+    width: 30%;
+    background-color: #06C;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 10;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+	alignment-adjust:central;
+	
+
+}
+.my-border 
+{	
+text-align:left;
+color:;
+border:2x solid #CCCCCC;
+border-radius:25px;
+width:70%;
+margin:auto;
+background-color:#CCC;
+
+}
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+	
+}
+</style>
+<script>
+window.onload = function (){
+	cookiess();
+}
+function goback(){
+	window.history.back();
+}
+function cookiess(){
+	myCookies = {};
+	var kv = document.cookie.split(";");
+	for(var id in kv){
+		var cookie = kv[id].split("=");
+		myCookies[cookie[0].trim()] = cookie[1];
+
+	}
+	
+	document.getElementById("fname").innerHTML = myCookies["_fname"];
+	document.getElementById("lname").innerHTML = myCookies["_lname"]; 
+	document.getElementById("hnum").innerHTML = myCookies["_hnum"];
+	document.getElementById("street").innerHTML = myCookies["_street"] ;
+	document.getElementById("city").innerHTML = myCookies["_city"]; 
+	document.getElementById("province").innerHTML = myCookies["_province"]; 
+	document.getElementById("zip").innerHTML = myCookies["_zipcode"];
+	document.getElementById("pnum").innerHTML = myCookies["_phonenum"]; 
+	document.getElementById("cpnum").innerHTML = myCookies["_cellpnum"];
+	document.getElementById("csnum").innerHTML = myCookies["_csnum"]; 
+	document.getElementById("zsign").innerHTML= myCookies["_zosign"];
+	document.getElementById("zyear").innerHTML = myCookies["_zoyear"];
+	document.getElementById("bd").innerHTML =myCookies["_birthday"];
+	document.getElementById("bdweek").innerHTML = myCookies["_bdofweek"]; 
+	
+	}
+</script>
+
+
+</head>
+<body  background="Noisy-Grid-Seamless-Pattern-For-Website-Background.jpg">
+<h1 align="center">Register Report</h1>
+
+
+ 
+<form style="font-family:Arial, Helvetica, sans-serif" ,"font-size:15%"   >
+<table width="100%" border="0" align="center" class="my-border">
+   <tr>
+     <td width="28">&nbsp;</td>
+   
+     <td width="163"><b> Firstname : </b></td>
+     <td width="49"><p id="fname"> </p></td>
+     <td width="133"><b>Lastname : </b></td>
+     <td width="52"><p id="lname"></p></td>
+   </tr>
+   <tr>
+     <td>&nbsp;</td>
+     <td><b>Address</b></td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+   </tr>
+   <tr>
+     <td>&nbsp;</td>
+     <td>House number : </td>
+     <td><p id="hnum"></p></td>
+     <td>Street : </td>
+     <td><p id="street"></p></td>
+   </tr>
+   <tr>
+     <td>&nbsp;</td>
+     <td>City : </td>
+     <td><p id="city"> </p></td>
+     <td>Provice : </td>
+     <td><p id="province"></p></td>
+   </tr>
+   <tr>
+     <td>&nbsp;</td>
+     <td>Zipcode : </td>
+     <td><p id="zip"></p></td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+   </tr>
+   <tr>
+     <td>&nbsp;</td>
+     <td><b>Phone number : </b></td>
+     <td><p id="pnum"></p></td>
+     <td><b>Cell Phone number : </b></td>
+     <td><p id="cpnum"> </p></td>
+   </tr>
+   <tr>
+     <td>&nbsp;</td>
+     <td><b>Birthday : </b></td>
+     <td><p id="bd"></p></td>
+     <td><b> Birthday of week : </b></td>
+     <td><p id="bdweek"></p></td>
+   </tr>
+   <tr>
+     <td>&nbsp;</td>
+     <td><b>Citizenship number : </b></td>
+     <td><p id="csnum"></p></td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+   </tr>
+   <tr>
+     <td>&nbsp;</td>
+     <td><b>Zodiac Sign : </b></td>
+     <td><p id="zsign"></p></td>
+     <td><b>Zodiac Year : </b></td>
+     <td><p id="zyear"></p></td>
+   </tr>
+   <tr>
+     <td>&nbsp;</td>
+   <td>&nbsp;</td>
+   <td colspan="2" align="center">&nbsp;</td>
+   <td></td>
+   </tr>
+
+</table>
+
+<p>&nbsp;</p>
+<div class="wrapper">
+    <p>
+      <input type="button" name="Button" id="Button" value="Back" onClick="goback()">
+    </p>
+    <p>&nbsp;</p>
+</div>
+</form>
+</body>
+</html>

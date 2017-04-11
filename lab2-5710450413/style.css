@@ -1,0 +1,342 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+/* This file based on 'Tranquille' by Dave Shea */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+
+/* basic elements */
+
+{
+margin : 0;
+padding : 0;
+}
+body {
+background : url(backack2.jpg) center repeat-y;
+background-attachment:fixed;
+padding : 0 0 20px 0;
+}
+a {
+	color : #CC0033;
+	font-weight : bold;
+	text-decoration : none;
+}
+a:hover {
+border : #d7d6b7 solid 1px;
+border-right : none;
+border-left : none;
+}
+abbr, abbr {
+cursor : help;
+}
+.page-wrapper {
+position : relative;
+width : 900px;
+left : 50%;
+margin-left : -390px;
+
+overflow : auto;
+z-index : 100;
+}
+.intro {
+position : relative;
+padding-bottom : 14px;
+height : auto !important ;
+height : 1%;
+}
+header {
+position : relative;
+width : 781px;
+height : 250px;
+margin : -10 auto;
+left:-0px;
+background :url(Untitled-2s.jpg) center no-repeat;
+background-position:center;
+background-size:2500px 500px;
+  filter:alpha(opacity=60);
+  opacity:0.6;
+ 
+
+}
+header h1{
+width : 895px;
+position : absolute;
+font-size: 80px;
+color: #36C;
+font : bold 80px verdana;
+	
+	top : -10px;
+	left : -20px;
+	height : 136px;
+	background : url(topLeft_bg.gif) repeat-x;
+	z-index : 10;
+}
+header h2 {
+	width : 895px;
+	position : absolute;
+	color: #09C;
+	font : bold 40px verdana;
+	top : 122px;
+	left : 106px;
+	height : 300px;
+	z-index : 10;
+}
+h3 {
+text-indent : 100%;
+white-space : nowrap;
+overflow : hidden;
+}
+
+.summary p:first-child {
+display:none;
+}
+.summary p:last-child {
+	color : #CC6666;
+	position : absolute;
+	bottom : 0;
+	left : 58px;
+	background : url(back2.jpg) left center no-repeat;
+	text-indent : 14px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 12px;
+	font-weight: normal;
+	font-variant: normal;
+}
+.summary p:last-child a {
+display : inline;
+position : relative;
+}
+.preamble {
+width : 600px;
+margin-left : 0px;
+font : Helvetica, Arial, sans-serif;
+font-size : 18px;
+font-style:normal;
+color : #a8a781;
+margin-top : 10px;
+background : url(back2.jpg) left center no-repeat;
+background-position:center;
+background-size:950px 600px;
+filter:alpha(opacity=60);
+opacity:0.6;
+}
+.preamble h1 {
+width : 500px;
+height : 14px;
+font-family:"Arial Black", Gadget, sans-serif;
+color:#03C;}
+
+.preamble h3 {
+width : 302px;
+height : 14px;
+background : url(back2.jpg) left center no-repeat;
+}
+
+.preamble p {
+margin : 18px 0 18px 17px;
+letter-spacing : 0.03em;
+text-align : justify;
+color:#000;
+font-size:18px;
+
+}
+.supporting {
+width : 600px;
+margin-left : 0px;
+/*font : normal normal 12px/18px Georgia, "Times New Roman", Times, serif;*/
+font : Helvetica, Arial, sans-serif;
+font-size : 18px;
+font-style:normal;
+color : #a8a781;
+margin-top : 10px;
+}
+.explanation h1 {
+width : 500px;
+height : 14x;
+font-family:"Arial Black", Gadget, sans-serif;
+color:#00F;
+font-size:30px;
+}
+
+.explanation{
+background : url(back3.jpg) left center no-repeat;
+background-position:center;
+background-size:cover;
+ filter:alpha(opacity=60);
+  /* CSS3 standard */
+ opacity:0.6;
+}
+.explanation p{
+	color:#000}
+	
+.participation {
+
+	background : url(back2.jpg) left center no-repeat;
+	background-position:center;
+	background-size:cover;
+  filter:alpha(opacity=60);
+  /* CSS3 standard */
+  opacity:0.6;
+}
+.participation h1 {
+width : 424px;
+height : 18px;
+font-family:"Arial Black", Gadget, sans-serif;
+color:#00F;
+font-size:30px;}
+
+.participation p{
+	color:#000;}
+
+.benefits{
+background : url(back3.jpg) left center no-repeat;
+background-position:center;
+background-size:cover;
+ filter:alpha(opacity=60);
+  /* CSS3 standard */
+ opacity:0.6;
+}
+.benefits p{
+	color:#000}
+.benefits h1 {
+width : 424px;
+height : 18px;
+font-family:"Arial Black", Gadget, sans-serif;
+color:#00F;
+font-size:30px;}
+
+.requirements{
+
+background : url(back2.jpg) left center no-repeat;
+background-position:center;
+background-size:cover;
+filter:alpha(opacity=60);
+opacity:0.6;
+}
+
+.requirements h1 {
+width : 424px;
+height : 18px;
+font-family:"Arial Black", Gadget, sans-serif;
+color:#00F;
+font-size:30px;}
+
+
+.requirements p {
+	color:#000;
+}
+.supporting p {
+margin : 16px 0;
+}
+.requirements {
+margin-bottom : 37px;
+}
+footer {
+display : inline;
+float : right;
+background : url(check.gif) left center no-repeat;
+padding-left : 18px;
+margin-bottom : -26px;
+}
+
+.extra1 {
+position : relative;
+left : 50%;
+margin-left : -390px;
+background : url(bottom.gif);
+width : 781px;
+height : 42px;
+}
+.sidebar {
+width : 196px;
+position : absolute;
+top : 284px;
+right : 110px;
+}
+.sidebar h3.select {
+width : 150px;
+height : 20px;
+position:relative;
+right: -40px;
+background : url(back4.jpg);
+}
+.sidebar h3.archives {
+width : 150px;
+height : 20px;
+position:relative;
+right: -40px;
+background: url(back4.jpg);
+}
+.sidebar h3.resources {
+width : 150px;
+height : 20px;
+position:relative;
+right: -40px;
+background : url(back4.jpg);
+margin-top : 30px;
+}
+.sidebar ul {
+list-style-image : url(blt_sm.gif);
+margin : 5px 0 20px 23px;
+font : normal normal 11px/16px "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Lucida, Arial, Helvetica, sans-serif;
+color : #bcbb93;
+}
+.sidebar ul li {
+margin-bottom : 8px;
+}
+.sidebar ul a {
+color : #000;
+font-weight : normal;
+font-style : italic;
+font-size : 12px;
+text-transform : lowercase;
+}
+.sidebar ul a:hover {
+color : #000;
+border : none;
+}
+.sidebar .design-selection ul {
+list-style-image : url(blt_lrg.gif);
+margin : 5px 0 20px 23px;
+font : normal normal 11px/16px "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Lucida, Arial, Helvetica, sans-serif;
+color : #bcbb93;
+}
+.sidebar .design-selection ul a {
+display : block;
+color:#000;
+font-weight : normal;
+font-style : italic;
+font-size : 12px;
+text-transform : none;
+line-height : 14px;
+}
+.sidebar .design-selection ul a.designer-name {
+display : inline;
+font-style : normal;
+font-size : 11px;
+color:#333 ;
+letter-spacing : 0;
+text-transform : lowercase;
+}
+.sidebar .design-selection ul a:hover {
+color : #000;
+border : none;
+}
+.sidebar .design-archives ul, .sidebar .zen-resources ul {
+margin : 10px 0 20px 24px;
+}
+
+.extra3 {
+	width : 49%;
+	position : absolute;
+	top : 88px;
+	right : -76px;
+	height : 141px;
+	background : url(back4.jpg) repeat-x;
+	z-index : 10;
+}
