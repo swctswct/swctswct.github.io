@@ -9,7 +9,7 @@
      font-size: 20px;
 }
 body{
-  background: url(bg-index.JPG) no-repeat center center fixed;
+  background: url(newbg.JPG) no-repeat center center fixed;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 
@@ -18,10 +18,27 @@ body{
 }
 #name h1{
   font-weight: bolder;
-  font-size:60px ;
+  font-size:100px ;
 
   color: #A22B03;
-  font-family: Tahoma;
+  font-family: Calibri;
+}
+
+#nam2 h3{
+  font-weight: bolder;
+  font-size:30px ;
+
+  color: #333333;
+  font-family: Cloud;
+}
+
+#nam3 h3{
+  font-style: italic;
+  font-weight: bold;
+  font-size:40px ;
+
+  color: #A22B03;
+  font-family: Angsana New;
 }
 @media (min-width: 768px) {
   .navbar-nav.navbar-center {
